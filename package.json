@@ -1,0 +1,32 @@
+{
+  "name": "threejs-artsy",
+  "version": "0.0.1",
+  "description": "Artsy projects with three.js",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "http-server ./dist",
+    "test": "mocha test"
+  },
+  "author": "John Yates",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.1",
+    "lodash": "^4.17.15",
+    "three.js": "^0.77.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
