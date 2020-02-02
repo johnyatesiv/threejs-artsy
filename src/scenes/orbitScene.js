@@ -1,10 +1,14 @@
 import shapeGenerator from '../util/shapeGenerator';
+import * as Three from 'three'
+
 export default class OrbitScene {
-    constructor(scene, camera, renderer) {
-        this.scene = scene;
-        this.camera = camera;
-        this.renderer = renderer;
-        this.run();
+    constructor(renderContainer) {
+        this.scene = new Three.Scene()
+        this.camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+        this.renderer = new Three.WebGLRenderer()
+        this.renderer.setSize( window.innerWidth * 0.75, window.innerHeight * 0.75 )
+        renderContainer.appendChild(this.renderer.domElement)
+        this.run()
     }
 
     run() {
