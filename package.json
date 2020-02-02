@@ -1,32 +1,45 @@
 {
-  "name": "threejs-artsy",
-  "version": "0.0.1",
-  "description": "Artsy projects with three.js",
+  "name": "gatsby-starter-default",
   "private": true,
-  "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "http-server ./dist",
-    "test": "mocha test"
-  },
-  "author": "John Yates",
-  "license": "ISC",
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "http-server": "^0.12.1",
-    "lodash": "^4.17.15",
-    "three.js": "^0.77.1"
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "three": "^0.113.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.4.2",
-    "style-loader": "^1.1.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "prettier": "^1.19.1"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
