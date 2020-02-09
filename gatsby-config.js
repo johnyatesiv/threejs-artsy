@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Three.js Experiments`,
+    title: `Three.js Experiment Gallery`,
     description: ``,
     author: `John Yates`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import OrbitScene from '../scenes/orbitScene'
+import OrbitScene from '../scenes/orbit/orbit'
 
 function Orbit() {
     useEffect(() => {
@@ -15,7 +15,6 @@ function Orbit() {
     return (
         <Layout>
             <SEO title="Orbit"/>
-            <div id="orbitSceneContainer"></div>
             <Link to="/">Back</Link>
         </Layout>
     )
