@@ -35,6 +35,12 @@ class ShapeGenerator {
     return new Three.Mesh( geometry, material );
   }
 
+  createSmallSphere() {
+    const geometry = new Three.SphereGeometry( 1, 25, 25 );
+    const material = new Three.MeshBasicMaterial( {color: this.getRandomColor()} );
+    return new Three.Mesh( geometry, material );
+  }
+
   getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';

@@ -16,32 +16,36 @@ export default class OrbitScene {
         const renderer = this.renderer;
         const scene = this.scene;
         const camera = this.camera;
-        const cube = shapeGenerator.createCube();
-        this.scene.add( cube );
+        const spheres = [];
+        const sphereCount = 50;
 
-        const cube2 = shapeGenerator.createCube();
-        this.scene.add( cube2 );
+        for (let i = 0; i < sphereCount; i++) {
+            const sphere = shapeGenerator.createSmallSphere();
+            spheres.push(sphere);
+            this.scene.add( sphere );
+        }
 
-        const sphere1 = shapeGenerator.createRandomSphere();
-        this.scene.add( sphere1 );
+        this.camera.position.z = 10;
 
-        const sphere2 = shapeGenerator.createRandomSphere();
-        this.scene.add( sphere2 );
+        function randomMotion() {
+            let coefficient = 0.5;
+            if(Math.random() > 0.1) {
+                coefficient = -0.1
+            }
 
-        const sphere3 = shapeGenerator.createRandomSphere();
-        this.scene.add( sphere3 );
-
-        this.camera.position.z = 7;
+            return coefficient * Math.random();
+        }
 
         function animate() {
             requestAnimationFrame( animate );
-            cube.rotation.y += 0.01;
-            cube2.rotation.y -= 0.01;
-            cube.rotation.x += 0.01;
-            cube2.rotation.x -= 0.01;
-            sphere1.rotation.x -= 0.01;
-            sphere1.rotation.y -= 0.01;
-            sphere1.rotation.z -= 0.01;
+            spheres.forEach(sphere => {
+                sphere.rotation.x -= 0.01;
+                sphere.rotation.y -= 0.01;
+                sphere.rotation.z -= 0.01;
+                sphere.position.z += randomMotion();
+                sphere.position.y += randomMotion();
+                sphere.position.x += randomMotion();
+            });
 
             renderer.render( scene, camera );
         }

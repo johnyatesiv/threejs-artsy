@@ -5,13 +5,11 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import ContentPanel from '../components/content-panel/content-panel';
 import Orbit from '../scenes/orbit/orbit';
-
-import Constellation from '../images/constellation.jpg';
-import Galaxy from '../images/galaxy.jpg';
-import Universe from '../images/blue-universe.jpg';
+import Collision from '../scenes/collision/collision';
 
 const scenes = [
-    { name: 'Orbit', scene: Orbit }
+    { name: 'Orbit', scene: Orbit },
+    { name: 'Collision', scene: Collision }
 ]
 
 
