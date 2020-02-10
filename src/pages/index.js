@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
+import HeaderPanel from '../components/header/header-panel';
 import ContentPanel from '../components/content-panel/content-panel';
 import Orbit from '../scenes/orbit/orbit';
 import Collision from '../scenes/collision/collision';
@@ -16,6 +17,7 @@ const scenes = [
 
 const IndexPage = () => (
     <div id="content">
+        <HeaderPanel />
         {scenes.map(scene => <ContentPanel name={scene.name} scene={scene.scene} />)}
     </div>
 )

@@ -20,31 +20,44 @@ export default class OrbitScene {
         const sphereCount = 50;
 
         for (let i = 0; i < sphereCount; i++) {
-            const sphere = shapeGenerator.createSmallSphere();
-            spheres.push(sphere);
-            this.scene.add( sphere );
+            addSphere(scene);
         }
 
         this.camera.position.z = 10;
 
-        function randomMotion() {
-            let coefficient = 0.5;
-            if(Math.random() > 0.1) {
-                coefficient = -0.1
-            }
+        function addSphere(scene) {
+            const sphere = shapeGenerator.createSmallSphere();
+            spheres.push(sphere);
+            scene.add( sphere );
+        }
 
-            return coefficient * Math.random();
+        function randomMotion() {
+            return Math.random() * 0.05;
+        }
+
+        function outOfBounds(position) {
+            return position > 3;
+        }
+
+        function bound(obj, dim) {
+            const motion = randomMotion();
+            if (outOfBounds(obj.position[dim])) {
+                obj.position[dim] -= motion;
+            } else {
+                obj.position[dim] += motion;
+            }
         }
 
         function animate() {
             requestAnimationFrame( animate );
             spheres.forEach(sphere => {
+                console.log(sphere.position);
                 sphere.rotation.x -= 0.01;
                 sphere.rotation.y -= 0.01;
                 sphere.rotation.z -= 0.01;
-                sphere.position.z += randomMotion();
-                sphere.position.y += randomMotion();
-                sphere.position.x += randomMotion();
+                bound(sphere, 'x');
+                bound(sphere, 'y');
+                bound(sphere, 'z');
             });
 
             renderer.render( scene, camera );

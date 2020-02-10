@@ -1,13 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import './header.scss';
+import './header-panel.scss';
 
 const Header = () => (
-  <header id="header">
-    <div>
+    <div id="header-panel" class="parallax">
+        ThreeJS Experiment Gallery
     </div>
-  </header>
 )
 
 export default Header
